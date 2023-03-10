@@ -1,7 +1,13 @@
+body {
+  height: 110vh;
+  background: #ebc5c5;
+}
+
 .container {
   width: 100%;
   padding: 5rem 25rem;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 .h1 {
@@ -9,11 +15,15 @@
   font-size: 4rem;
   margin-bottom: 2rem;
 }
+
 .acc:hover .acc-item__text {
   color: black;
 }
-.acc:hover i.acc-item__icon{
-  display: block;
+
+.acc:hover i.acc-item__icon {
+  opacity: 1;
+  color: black;
+  transition: all 0.5s ease;
 }
 
 .acc-item {
@@ -39,9 +49,10 @@
 }
 
 i.acc-item__icon {
-  display: none;
+  opacity: 0;
   transform: rotate(90deg);
   transition: all 0.5s ease;
+  color: blue;
 }
 
 .img-wrapper {
@@ -62,33 +73,36 @@ i.acc-item__icon {
   transition: all 0.5s ease;
 }
 
-.input:hover ~ .img-wrapper>.acc-item__img {
+.input:hover~.img-wrapper>.acc-item__img {
   height: 25rem;
   transform: scale(1);
+  transition: all 0.5s ease;
 }
 
-.acc-item:hover>.acc-item__label>i.acc-item__icon {
-  display: block;
+.acc-item:hover>.acc-item__label>i.acc-item__icon,
+.input:checked~.acc-item__label>i.acc-item__icon {
+  opacity: 1;
   transform: rotate(45deg);
+  color: black;
   transition: all 0.5s ease;
 }
 
 .input:checked~.img-wrapper>.acc-item__img {
   height: 25rem;
-  transform: scale(1); 
+  transform: scale(1);
   transition: all 0.5s ease;
 }
-.input:checked~.acc-item__label>i.acc-item__icon {
-  display: block;
-  transform: rotate(45deg);
-  transition: all 0.5s ease;
+
+
+
+.input:checked~.acc-item__label>.acc-item__text {
+  color: black;
 }
-.input:checked~.acc-item__label>.acc-item__text{
-  color:black;
-}
+
 li {
   position: relative;
 }
+
 li>input {
   position: absolute;
   cursor: pointer;
@@ -96,3 +110,4 @@ li>input {
   height: 100%;
   opacity: 0;
 }
+
