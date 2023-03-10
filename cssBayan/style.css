@@ -92,9 +92,6 @@ i.acc-item__icon {
   transform: scale(1);
   transition: all 0.5s ease;
 }
-
-
-
 .input:checked~.acc-item__label>.acc-item__text {
   color: black;
 }
@@ -109,5 +106,6 @@ li>input {
   width: 100%;
   height: 100%;
   opacity: 0;
+  z-index: 2;
 }
 
